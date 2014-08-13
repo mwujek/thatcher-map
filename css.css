@@ -15,8 +15,89 @@ body, html{
 
 .cities:hover{
   fill:#7b5165 !important;
+}
+
+/*CIRLCE ICONS*/
+
+/*from hover.css*/
+.button {
+  /*margin: .4em;*/
+  cursor: pointer;
+  text-decoration: none;
+  color: #666666;
+}
+
+
+/* Outline Outward */
+.outline-outward {
+  display: inline-block;
+  position: relative;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
   
-  
+}
+.outline-outward:before {
+  content: '';
+  position: absolute;
+  border: #fff solid 3px;
+  border-radius: 40px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  /*-webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: top, right, bottom, left;
+  transition-property: top, right, bottom, left;*/
+  transition:all 0.3s;
+}
+.outline-outward:hover:before, .outline-outward:focus:before, .outline-outward:active:before {
+  top: -3px;
+  right: -3px;
+  bottom: -3px;
+  left: -3px;
+  opacity: 1;
+}
+
+.circle-map{
+  width:40px;
+  height:40px;
+  border-radius: 25px;
+  background:#666;
+  transition:0.3s all;
+  position: fixed;
+  border:0px solid red;
+}
+
+.active-circle-map{
+  border:2px solid red;
+}
+
+
+/*STAR SHAPE*/
+
+#star{
+  width:40px;
+  height:40px;
+  position:fixed;
+  top:50%;
+  left:50%;
+  fill: red;
+  transition:0.6s all;
+}
+
+#star:hover{
+  fill:white;
+  transform: scale(1.5); 
+}
+
+
+#dona{
+  top:50%;
+  left:60%;
+  background-image: url(img/bw-people/teodora.jpg);
+  background-size: 100% 100%;
 }
 
 img{
@@ -141,6 +222,7 @@ h1{
   transition:0.3s all;
   background: #333;
   color:#fff;
+  padding: 20px 0px !important;
 }
 
 .pane h1{
@@ -176,7 +258,7 @@ h1{
 }
 
 .pane h1{
-  padding: 20px 0px;
+  padding: 0px 0px;
 }
 
 /*Content Pane!*/

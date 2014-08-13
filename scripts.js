@@ -87,6 +87,7 @@ $(function () {
       $(this).next(".pane").slideToggle(slideSpeed).siblings(".pane:visible").slideUp(slideSpeed);
       $(this).delay( slideSpeed*1.2 ).toggleClass("currentz");
       $(this).siblings("h3").removeClass("currentz");
+      $(this).next().children("h1").removeClass('activeItem'); //remove active class from the entry
       //openTab();
     });
 
