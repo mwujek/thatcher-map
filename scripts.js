@@ -1,6 +1,7 @@
 var tooltip = $('#tools');
 var tipAdjustX = -47;
 var tipAdjustY = 8;
+var slideSpeed = 1000;
 //var scrollTo2 = "#scrollTo2";
 
 //What happens when hovering over states
@@ -75,9 +76,59 @@ $( ".cities" ).hover(function() {
 }, function() {mouseOnC(); } );
 
 
+//map circle functions
+
+function openTab3(scrollHere, category){
+
+      //var currentItem = $(this); // get data below
+      //var scrollHere = currentItem.data('title');
+      //var category = currentItem.data('category');
+      category = '#'+category;
+      //var currentScrollID = '#'+whereToScroll;
+
+      if($(category).hasClass('currentz')){
+
+        $(category).next().children("h1").removeClass('activeItem'); //remove active class from the entry
+        moveToTop();
+        setTimeout(function(){openTab2(scrollHere);},1300);
+      } else{
+
+      $(category).next().children("h1").removeClass('activeItem'); //remove active class from the entry
+      $(category).next(".pane").siblings(".pane:visible").slideUp(slideSpeed); // collapse all other tabls
+      setTimeout(function(){
+      $(category).next(".pane").slideToggle(slideSpeed);
+        setTimeout(function(){
+          $(category).toggleClass("currentz");
+          },100);
+      },1000); // open current slide
+      
+      $(category).siblings("h3").removeClass("currentz"); //remove any effects before the scrolling takes place
+      $(category).children("h1").removeClass('activeItem');
+      moveToTop();
+     
+      setTimeout(function(){openTab2(scrollHere);},1500);
+      }
+
+  
+}
+
+
+
+   
+
+
+  //$('.circle-map').html('c!!!!');
+  
+  $('.circle-map').on('click', function(){
+    var scrollHere = $(this).data('title');
+    var category = $(this).data('category');
+    openTab3(scrollHere, category);
+    //window.alert(scrollHere);
+  });
+
+
 // Accordion
 
-var slideSpeed = 1000;
 
 $(function () {
     //  Show and Hide

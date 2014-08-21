@@ -93,11 +93,19 @@ body, html{
 }
 
 
-#dona{
+#dona, #dona2, #dona3{
   top:50%;
   left:60%;
   background-image: url(img/bw-people/teodora.jpg);
   background-size: 100% 100%;
+}
+
+#dona2{
+  left:70%;
+}
+
+#dona3{
+  left: 80%;
 }
 
 img{
