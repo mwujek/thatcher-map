@@ -17,7 +17,136 @@ body, html{
   fill:#7b5165 !important;
 }
 
+#click-map{
+  position: fixed;
+  left:50%;
+  padding: 20px;
+  background: white;
+}
+
+#map-container{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top:0;
+  text-align: center;
+  left:0;
+}
+
 /*CIRLCE ICONS*/
+
+.circle-cities{
+  position: fixed;
+  width: 16px;
+  height:16px;
+  background: white;
+  border-radius: 8px;
+  opacity: 0.7;
+  transition:0.3s;
+}
+
+.circle-map{
+  width:30px;
+  height:30px;
+  border-radius: 25px;
+  background:#666;
+  transition:0.3s all;
+  position: fixed;
+  border:0px solid red;
+  left:40%;
+  top:40%;
+  background-size: 100%;
+}
+
+/*/////////////////////////
+//////////////////////////////////////////////////
+//////////////////////////////////////////////////
+//////////////////////////////////////////////////
+people and traditions*/
+
+#blanco{
+  background-image: url(img/circle-images/blanco.png);
+  left: 73%;
+  top: 77%;
+}
+
+#oaxaca-traditions{
+  background-image: url(img/circle-images/woman-w-animals.png);
+  top: 84.5%;
+left: 69%;
+}
+
+#guanajuato-traditions{
+ background-image: url(img/circle-images/monkey.png);
+ left: 54.5%;
+top: 57%; 
+}
+
+#michoacan-traditions{
+background-image: url(img/circle-images/pineapple.png);
+top: 66.5%;
+left: 49%; 
+}
+
+#puebla-traditions{
+background-image: url(img/circle-images/tree-life.png);
+top: 68.5%;
+left: 58%; 
+}
+
+#chiapas-traditions{
+background-image: url(img/circle-images/hat.png);
+top: 85%;
+left: 68.6%;
+}
+
+#medrano{
+background-image: url(img/circle-images/medrano.png);
+    top: 59%;
+    left: 39%;
+
+}
+
+#jn-traditions{
+background-image: url(img/circle-images/huichol.png);
+top: 56%;
+left: 33.5%; 
+}
+
+#linares{
+background-image: url(img/circle-images/linares.png);
+top: 71%;
+left: 43%; 
+}
+
+#mexico-traditions{
+background-image: url(img/circle-images/tree-death.png);
+top: 66%;
+left: 38.5%;
+}
+
+#guerrero-traditions{
+background-image: url(img/circle-images/gourd.png); 
+top: 74.5%;
+left: 34%;
+}
+
+/*//////////////////////////////////////////////////
+//////////////////////////////////////////////////
+//////////////////////////////////////////////////*/
+/*cities and stars*/
+.circle-cities:hover{
+  opacity: 1;
+}
+
+#tonala{
+  left:53%;
+  top:67%;
+}
+#atzompa{
+  left:72%;
+  top:81%;
+}
 
 /*from hover.css*/
 .button {
@@ -25,21 +154,57 @@ body, html{
   cursor: pointer;
   text-decoration: none;
   color: #666666;
+  z-index: 200;
 }
 
 
-/* Outline Outward */
+/* ring for picture circles */
 .outline-outward {
   display: inline-block;
-  position: relative;
+  position: relative; /*removing this snippet will change all POSTIONS!!*/
   -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-  
+  transform: translateZ(0); 
 }
+
+/* ring for city circles */
+.outline-outward-cities {
+  display: inline-block;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0); 
+}
+
+/*these rules are for chaning the colors of the hover 'ring'*/
+.outline-outward-cities:before{
+border: #cf9e76 solid 2px;
+}
+
+.people-type.outline-outward:before{
+border: #ff851b solid 2px;
+}
+
+.traditions-type.outline-outward:before{
+border: #0DB47B solid 2px;
+}
+
 .outline-outward:before {
   content: '';
   position: absolute;
-  border: #fff solid 3px;
+  border-radius: 40px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  /*-webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: top, right, bottom, left;
+  transition-property: top, right, bottom, left;*/
+  transition:all 0.3s;
+}
+
+.outline-outward-cities:before {
+  content: '';
+  position: absolute;
   border-radius: 40px;
   top: 0;
   right: 0;
@@ -60,15 +225,15 @@ body, html{
   opacity: 1;
 }
 
-.circle-map{
-  width:40px;
-  height:40px;
-  border-radius: 25px;
-  background:#666;
-  transition:0.3s all;
-  position: fixed;
-  border:0px solid red;
+.outline-outward-cities:hover:before, .outline-outward-cities:focus:before, .outline-outward-cities:active:before {
+  top: -3px;
+  right: -3px;
+  bottom: -3px;
+  left: -3px;
+  opacity: 1;
 }
+
+
 
 .active-circle-map{
   border:2px solid red;
@@ -93,20 +258,13 @@ body, html{
 }
 
 
-#dona, #dona2, #dona3{
+#dona{
   top:50%;
   left:60%;
   background-image: url(img/bw-people/teodora.jpg);
   background-size: 100% 100%;
 }
 
-#dona2{
-  left:70%;
-}
-
-#dona3{
-  left: 80%;
-}
 
 img{
   margin:30px auto;
@@ -126,16 +284,43 @@ span{
   font-weight:300;
   opacity:0;
   padding:5px;
-  border:1px solid #eee;
+  border-left:0px solid #eee;
   background:white;
   top:0;
   left:0;
   transition:0.3s all;
+  z-index: 1;
+}
 
-  
+#tools h1, #tools h2{
+  font-family:'Lato',sans-serif !important;
+  margin: 0;
+  padding:0;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+#tools h2{
+  font-weight: 100;
+}
+
+.people-tooltip{
+  border: 1px solid #ffcc00;
+  border-left:5px solid #ffcc00 !important;
+}
+
+.traditions-tooltip{
+  border: 1px solid #333;
+  border-left:5px solid #333 !important;
+}
+
+.misc-tooltip{
+  border: 1px solid cyan;
+  border-left:5px solid cyan !important;
 }
 
 .show{
+  z-index: 200 !important;
   opacity:1 !important;
 }
 
@@ -225,12 +410,23 @@ h1{
   padding-left: 0px;
   transition:0.3s all;
 }
-
+/*Different colors for different sections!!*/
 .activeItem{
   transition:0.3s all;
-  background: #333;
   color:#fff;
   padding: 20px 0px !important;
+}
+
+.people-pane .activeItem{
+  background: #333;
+}
+
+.traditions-pane .activeItem{
+  background: cyan;
+}
+
+.places-pane .activeItem{
+  background: #ffcc00;
 }
 
 .pane h1{
