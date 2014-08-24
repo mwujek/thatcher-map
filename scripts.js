@@ -5,6 +5,18 @@ var slideSpeed = 1000;
 //var scrollTo2 = "#scrollTo2";
 //click to add SVG File
 
+   $(document).ready(function() {
+   $( "#resize-container" ).resizable();
+});
+
+
+//wrap tinting div around image circle
+
+    $(function() {  
+        $('.circle-map, .circle-cities ').each(function() {  
+            $(this).prepend('<span class="tint"></span>');  
+        });  
+    }); 
 
 
 //What happens when hovering over button
@@ -39,16 +51,49 @@ function mouseOnButton(itemLocalz, moreInfo, elementCategory){
 function moveToTop(){
   $('.accordion').animate({scrollTop: 0 }, 500);
 }
+
+
+function slideOutReference(){
+  //var stringCategory = '"'+info+'"';
+  //var categoryOfItem = $(stringCategory).data('category'); 
+
+  var currentElement = $('.activeItem').attr('id');  
+  var categoryText = currentElement.split('-')[0];
+
+
+  var reference = $('#reference-menu');
+  reference.addClass('activeReference');
+  reference.addClass(categoryText+"-style");
+  reference.html('<h2>Current Section:</h2><p>' + categoryText + '</p>');
+}
 function openTab2(p){
   var sel = '#'+p;
-  //console.log(sel);
+  
   var AmountOffset = $(sel).offset(); 
   
   $('.accordion').animate({scrollTop: AmountOffset.top-237 }, 1000);
   setTimeout(function(){
     $(sel).addClass('activeItem');
-
+    slideOutReference(); //slide out reference bar
+    if($(sel).next().hasClass('date')){
+      var date = $(sel).next();
+      $(date).addClass('activeItem');
+    }
   },800);
+
+
+  if(sel==='#people-scroll-3'){
+      
+  setTimeout(function(){
+    $('#oaxaca-wrap').addClass('oaxaca-active');
+    $('#oaxaca-tip').addClass('oaxaca-slide');
+  },3000);
+
+
+
+}
+
+
 }
 
 
@@ -96,12 +141,14 @@ function openTab3(scrollHere, category){
 
       if($(category).hasClass('currentz')){
 
-        $(category).next().children("h1").removeClass('activeItem'); //remove active class from the entry
+        $(category).next().children("h1,h2").removeClass('activeItem'); //remove active class from the entry
+        $('#reference-menu').removeClass('activeReference');
         moveToTop();
         setTimeout(function(){openTab2(scrollHere);},1300);
       } else{
 
-      $(category).next().children("h1").removeClass('activeItem'); //remove active class from the entry
+      $(category).next().children("h1,h2").removeClass('activeItem'); //remove active class from the entry
+      $('#reference-menu').removeClass('activeReference');
       $(category).next(".pane").siblings(".pane:visible").slideUp(slideSpeed); // collapse all other tabls
       setTimeout(function(){
       $(category).next(".pane").slideToggle(slideSpeed);
@@ -111,7 +158,7 @@ function openTab3(scrollHere, category){
       },1000); // open current slide
       
       $(category).siblings("h3").removeClass("currentz"); //remove any effects before the scrolling takes place
-      $(category).children("h1").removeClass('activeItem');
+      $(category).children("h1,h2").removeClass('activeItem');
       moveToTop();
      
       setTimeout(function(){openTab2(scrollHere);},1500);
@@ -127,9 +174,14 @@ function openTab3(scrollHere, category){
 
   //$('.circle-map').html('c!!!!');
   
-  $('.circle-map, .circle-cities').on('click', function(){
+  $('.circle-map, .circle-cities, .state-path').on('click', function(){
     var scrollHere = $(this).data('title');
     var category = $(this).data('category');
+
+    $('.activeItem').removeClass('activeItem');
+    $('#reference-menu').removeClass();
+    $('#oaxaca-wrap').removeClass('oaxaca-active');
+    $('#oaxaca-tip').removeClass();
     openTab3(scrollHere, category);
     //window.alert(scrollHere);
   });
@@ -146,9 +198,13 @@ $(function () {
       $(this).next(".pane").slideToggle(slideSpeed).siblings(".pane:visible").slideUp(slideSpeed);
       $(this).delay( slideSpeed*1.2 ).toggleClass("currentz");
       $(this).siblings("h3").removeClass("currentz");
-      $(this).next().children("h1").removeClass('activeItem'); //remove active class from the entry
+      $(this).next().children("h1,h2").removeClass('activeItem'); //remove active class from the entry
+      $('#reference-menu').removeClass();
+      $('#oaxaca-wrap').removeClass('oaxaca-active');
+      $('#oaxaca-tip').removeClass();
       //openTab();
     });
-
   });
+
+
 

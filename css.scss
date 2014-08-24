@@ -1,51 +1,38 @@
+$tradition-color: #0DB47B; //teal green
+$people-color: #B85034; //orange
+$people-light-color:#f39c12;
+$places-color: #34495e; //dark gret
+$places-lighter-color: #ecf0f1;
+$dark-color: #2c3e50;
+
+$maroon: #7B5165;
+$inverse-text:#fff;
+$oaxaca-color:#f9d498;
+
+$cities-diameter:12px;
+$menu-image-diameter:50px;
+
 @import url(http://fonts.googleapis.com/css?family=Lato:400,300,700);
 
 body, html{
   height:100%;
-  background:#aaa
-}
-.states, .cities{
-  transition:0.5s all;
-}
-
-
-.states:hover{
-  fill:#0db47b !important;
-}
-
-.cities:hover{
-  fill:#7b5165 !important;
-}
-
-#click-map{
-  position: fixed;
-  left:50%;
-  padding: 20px;
-  background: white;
-}
-
-#map-container{
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  top:0;
-  text-align: center;
-  left:0;
+  background:#aaa;
 }
 
 /*CIRLCE ICONS*/
 
 .circle-cities{
-  position: fixed;
-  width: 16px;
-  height:16px;
-  background: white;
-  border-radius: 8px;
+  position: absolute;
+  width: $cities-diameter;
+  height: $cities-diameter;
+  background: $places-lighter-color;
+  border-radius: $cities-diameter/2;
   opacity: 0.7;
   transition:0.3s;
 }
 
 .circle-map{
+  position: absolute;
   width:30px;
   height:30px;
   border-radius: 25px;
@@ -58,6 +45,54 @@ body, html{
   background-size: 100%;
 }
 
+/* tint circles on hover ! */
+
+ 
+  .tint {
+    position: absolute;
+    cursor: pointer;
+  }
+  
+  .tint:before {
+    z-index: 500;
+    border-radius: 30px;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    content: "";
+    position: absolute;
+    top: 50%;
+    bottom: 0;
+    left: 50%;
+    right: 0;
+    -moz-transition: all .3s linear;
+    -webkit-transition: all .3s linear;
+    -ms-transition: all .3s linear;
+    -o-transition: all .3s linear;
+    transition: all .3s linear;
+  }
+  
+  /*smaller circles for the cities*/
+    .circle-cities .tint:before{
+      width: $cities-diameter;
+    height: $cities-diameter;
+    border-radius: $cities-diameter/2;
+    }
+  .people-type .tint:hover:before {
+    background: $people-light-color;
+    opacity: 0.3; 
+  }
+
+  .circle-cities .tint:hover:before {
+    background: $places-color;
+    opacity: 0.3;
+  }
+
+  .traditions-type .tint:hover:before {
+    background: $tradition-color;
+    opacity: 0.3;
+  }
+
 /*/////////////////////////
 //////////////////////////////////////////////////
 //////////////////////////////////////////////////
@@ -65,72 +100,100 @@ body, html{
 people and traditions*/
 
 #blanco{
-  background-image: url(img/circle-images/blanco.png);
+  background-image: url(../img/circle-images/blanco.png);
   left: 73%;
   top: 77%;
 }
 
 #oaxaca-traditions{
-  background-image: url(img/circle-images/woman-w-animals.png);
+  background-image: url(../img/circle-images/woman-w-animals.png);
   top: 84.5%;
 left: 69%;
 }
 
 #guanajuato-traditions{
- background-image: url(img/circle-images/monkey.png);
+ background-image: url(../img/circle-images/monkey.png);
  left: 54.5%;
 top: 57%; 
 }
 
 #michoacan-traditions{
-background-image: url(img/circle-images/pineapple.png);
+background-image: url(../img/circle-images/pineapple.png);
 top: 66.5%;
 left: 49%; 
 }
 
 #puebla-traditions{
-background-image: url(img/circle-images/tree-life.png);
+background-image: url(../img/circle-images/tree-life.png);
 top: 68.5%;
 left: 58%; 
 }
 
 #chiapas-traditions{
-background-image: url(img/circle-images/hat.png);
+background-image: url(../img/circle-images/hat.png);
 top: 85%;
 left: 68.6%;
 }
 
 #medrano{
-background-image: url(img/circle-images/medrano.png);
+background-image: url(../img/circle-images/medrano.png);
     top: 59%;
     left: 39%;
 
 }
 
 #jn-traditions{
-background-image: url(img/circle-images/huichol.png);
+background-image: url(../img/circle-images/huichol.png);
 top: 56%;
 left: 33.5%; 
 }
 
 #linares{
-background-image: url(img/circle-images/linares.png);
+background-image: url(../img/circle-images/linares.png);
 top: 71%;
 left: 43%; 
 }
 
 #mexico-traditions{
-background-image: url(img/circle-images/tree-death.png);
+background-image: url(../img/circle-images/tree-death.png);
 top: 66%;
 left: 38.5%;
 }
 
 #guerrero-traditions{
-background-image: url(img/circle-images/gourd.png); 
+background-image: url(../img/circle-images/gourd.png); 
 top: 74.5%;
 left: 34%;
 }
 
+
+.image-holder{
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  display: block;
+}
+.image-holder ul{
+  width: 100%;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+.image-holder li{
+    text-align: center;
+    padding: 0px;
+    margin: 0px 2px;
+    display: inline-block;
+    width: $menu-image-diameter;
+    height: $menu-image-diameter;
+    border-radius: $menu-image-diameter/2;
+    background-size: 100%;
+  }
+
+#dona{
+  background: url(../img/bw-people/rosa_2.jpg);
+
+}
 /*//////////////////////////////////////////////////
 //////////////////////////////////////////////////
 //////////////////////////////////////////////////*/
@@ -153,7 +216,7 @@ left: 34%;
   /*margin: .4em;*/
   cursor: pointer;
   text-decoration: none;
-  color: #666666;
+  color: $tradition-color;
   z-index: 200;
 }
 
@@ -175,15 +238,15 @@ left: 34%;
 
 /*these rules are for chaning the colors of the hover 'ring'*/
 .outline-outward-cities:before{
-border: #cf9e76 solid 2px;
+border: $places-color solid 2px;
 }
 
 .people-type.outline-outward:before{
-border: #ff851b solid 2px;
+border: $people-color solid 2px;
 }
 
 .traditions-type.outline-outward:before{
-border: #0DB47B solid 2px;
+border: $tradition-color solid 2px;
 }
 
 .outline-outward:before {
@@ -258,23 +321,100 @@ border: #0DB47B solid 2px;
 }
 
 
-#dona{
-  top:50%;
-  left:60%;
-  background-image: url(img/bw-people/teodora.jpg);
-  background-size: 100% 100%;
-}
-
-
 img{
   margin:30px auto;
   display:block;
 }
 
-span{
-  z-index:100;
-  background:blue;
+#oaxaca-wrap{
+  background: #fff;
+  transition:0.3s all;
+  display: block;
+  margin-top: -5px !important;
+  padding-top: 10px !important;
+}
+
+.oaxaca-active{
+  background: $oaxaca-color !important;
+  
+}
+#oaxaca-tip{
+  position: absolute;
+  top: 295px;
+  right: 0px;
+  padding: 0px 10px;
+  background: none repeat scroll 0% 0% #fff;
+  transition: all 0.3s ease 0s;
+  margin: 0px;
+  font-family: "lato";
+  font-size: 14px;
+  border-radius: 5px;
+  font-weight: 100;
+  border: 1px #333 solid;
+  height: 30px;
+  line-height: 2px;
+}
+
+.oaxaca-slide{
+  right:-225px !important;
+}
+
+#reference-menu{
   position:absolute;
+  font-size:14px;
+  font-family:'Lato',sans-serif;
+  font-weight:300;
+  opacity:1;
+  width: 116px;
+  padding:1px;
+  background:white;
+  top: 241px;
+  right: 0px;
+  transition:0.3s all;
+  z-index: 900;
+  margin: 0;
+  padding-left: 5px;
+  z-index: 99 !important;
+  border-radius: 5px;
+}
+#reference-menu{
+
+
+  p,h2{
+    margin: 0;
+    padding-left: 5px;
+    font-size: 14px;
+  }
+  p{
+    padding-bottom: 5px;
+    font-weight: 300;
+    text-transform: capitalize;
+  }
+  h2{
+    padding-top: 5px;
+    font-weight: 900;
+  }
+}
+
+.activeReference{
+  /*right: -116px;*/
+  right: -136px !important;
+}
+
+.places-style{
+  border: 1px solid $places-color;
+  border-left: 5px solid $places-color;
+  color: $places-color !important;
+}
+.people-style{
+  border: 1px solid $people-color;
+  border-left: 5px solid $people-color;
+  color:$people-color !important;
+}
+.traditions-style{
+  border: 1px solid $tradition-color;
+  border-left: 5px solid $tradition-color;
+  color: $tradition-color !important;
 }
 
 #tools{
@@ -282,6 +422,7 @@ span{
   font-size:14px;
   font-family:'Lato',sans-serif;
   font-weight:300;
+  border-radius: 5px;
   opacity:0;
   padding:5px;
   border-left:0px solid #eee;
@@ -305,18 +446,18 @@ span{
 }
 
 .people-tooltip{
-  border: 1px solid #ffcc00;
-  border-left:5px solid #ffcc00 !important;
+  border: 1px solid $people-color;
+  border-left:5px solid $people-color !important;
 }
 
 .traditions-tooltip{
-  border: 1px solid #333;
-  border-left:5px solid #333 !important;
+  border: 1px solid $tradition-color;
+  border-left:5px solid $tradition-color !important;
 }
 
 .misc-tooltip{
-  border: 1px solid cyan;
-  border-left:5px solid cyan !important;
+  border: 1px solid $places-color;
+  border-left:5px solid $places-color !important;
 }
 
 .show{
@@ -327,33 +468,33 @@ span{
 /* MENU */
 header{
   color:white;
-  position:fixed;
-  top:0;
-  left:0;
   z-index: 100;
   height:240px;
-  background: url(img/logo.png);
+  display: block;
+  background: url(../img/logo.png);
   background-color:#7b5165;
+  z-index: 500;
   width:100%;
-  width:400px;
   background-position: 0% 50%;
   background-repeat: no-repeat;
   text-align:center;
+  background-position: 50%;
+  position: absolute;
   
 }
 /* Code for Accordion */
 
+
 .accordion {
-  position:fixed;
+  position: absolute;
   top:240px;
   left:0;
-  width:400px;
-  height:100%;
+  width:100%;
+  height:66%;
   overflow:scroll;
   overflow-x:hidden;
   background:rgba(255,255,255,0.8);
-  height:100%;
-  
+  z-index: 100;
 }
 .accordion h3 {
   color: #563546;
@@ -374,10 +515,20 @@ header{
   letter-spacing: 1px;
 
 }
-.accordion h3:hover{
-  background:#aaa;
-  border-left: #0db47b 1px solid;
-  
+
+#places:hover{
+  background:$places-color;
+  color:$places-lighter-color;
+}
+
+#people:hover{
+  background:$people-color;
+  color:$inverse-text;
+}
+
+#traditions:hover{
+  background:$tradition-color;
+  color:$inverse-text;
 }
 
 #links-list{
@@ -413,41 +564,94 @@ h1{
 /*Different colors for different sections!!*/
 .activeItem{
   transition:0.3s all;
-  color:#fff;
-  padding: 20px 0px !important;
 }
 
 .people-pane .activeItem{
-  background: #333;
+  background: $people-color;
+  color:$inverse-text;
 }
 
 .traditions-pane .activeItem{
-  background: cyan;
+  background: $tradition-color;
 }
 
 .places-pane .activeItem{
-  background: #ffcc00;
+  background: $places-color;
+  color:$places-lighter-color;
 }
 
 .pane h1{
   
-  padding: 0;
-  margin: 0;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
-.current {
+h2.activeItem{
+  margin-top: -25px !important;
+}
+
+.activeItem{
+  padding:10px 0px !important;
+}
+
+
+
+
+#resized{
+  border:1px solid #333;
+  padding:10px;
+  position:fixed;
+  z-index: 500;
+  background: red;
+}
+
+#resize-container{
+  position: relative;
+  margin: 0;
+  top:-44px;
+  left:-8px;
+  width: 450px;
+  min-width: 300px;
+  max-width: 650px;
+  height: 100%;
+  z-index: 100;
+  
+}
+.state-path{
+  transition:0.3s all;
+}
+.state-path:hover{
+  fill:#8D5758;
+}
+
+/*.current {
   background:#555;
   color:#fff;
-  border-left: #0db47b 10px solid;
-
+  border-left: $dark-color 10px solid;
 }
+*/
 
-.currentz {
-  background:#555 !important;
+
+.currentz#people{
+  background:$dark-color !important;
   color:#fff !important;
-  border-left: #0db47b 10px solid !important;
-
+  border-bottom: $people-color 10px solid !important;
 }
+
+#places.currentz{
+  background: $places-color !important;
+  color:#fff !important;
+  border-bottom: $dark-color 10px solid !important;
+}
+
+#traditions.currentz{
+  background:$dark-color !important;
+  color:#fff !important;
+  border-bottom: $tradition-color 10px solid !important;
+}
+
+
+
 .accordion div.pane {
   padding:5px 0px;
 }
@@ -501,8 +705,6 @@ header h1{
   text-transform: uppercase;
   font-size: 40px;
 }
-
-}
 .pane h1{
   margin-bottom: -15px !important;
   font-size: 24px;
@@ -515,5 +717,5 @@ header h1{
 }
 .accordion h3{
   font-family: "garamond-premier-pro-caption",serif !important;
-}
+  text-align: center;
 }

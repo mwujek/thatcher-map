@@ -1,0 +1,593 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:400,300,700);
+body, html {
+  height: 100%;
+  background: #aaa; }
+
+/*CIRLCE ICONS*/
+.circle-cities {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: #ecf0f1;
+  border-radius: 6px;
+  opacity: 0.7;
+  transition: 0.3s; }
+
+.circle-map {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 25px;
+  background: #666;
+  transition: 0.3s all;
+  position: fixed;
+  border: 0px solid red;
+  left: 40%;
+  top: 40%;
+  background-size: 100%; }
+
+/* tint circles on hover ! */
+.tint {
+  position: absolute;
+  cursor: pointer; }
+
+.tint:before {
+  z-index: 500;
+  border-radius: 30px;
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  content: "";
+  position: absolute;
+  top: 50%;
+  bottom: 0;
+  left: 50%;
+  right: 0;
+  -moz-transition: all .3s linear;
+  -webkit-transition: all .3s linear;
+  -ms-transition: all .3s linear;
+  -o-transition: all .3s linear;
+  transition: all .3s linear; }
+
+/*smaller circles for the cities*/
+.circle-cities .tint:before {
+  width: 12px;
+  height: 12px;
+  border-radius: 6px; }
+
+.people-type .tint:hover:before {
+  background: #f39c12;
+  opacity: 0.3; }
+
+.circle-cities .tint:hover:before {
+  background: #34495e;
+  opacity: 0.3; }
+
+.traditions-type .tint:hover:before {
+  background: #0db47b;
+  opacity: 0.3; }
+
+/*/////////////////////////
+//////////////////////////////////////////////////
+//////////////////////////////////////////////////
+//////////////////////////////////////////////////
+people and traditions*/
+#blanco {
+  background-image: url(../img/circle-images/blanco.png);
+  left: 73%;
+  top: 77%; }
+
+#oaxaca-traditions {
+  background-image: url(../img/circle-images/woman-w-animals.png);
+  top: 84.5%;
+  left: 69%; }
+
+#guanajuato-traditions {
+  background-image: url(../img/circle-images/monkey.png);
+  left: 54.5%;
+  top: 57%; }
+
+#michoacan-traditions {
+  background-image: url(../img/circle-images/pineapple.png);
+  top: 66.5%;
+  left: 49%; }
+
+#puebla-traditions {
+  background-image: url(../img/circle-images/tree-life.png);
+  top: 68.5%;
+  left: 58%; }
+
+#chiapas-traditions {
+  background-image: url(../img/circle-images/hat.png);
+  top: 85%;
+  left: 68.6%; }
+
+#medrano {
+  background-image: url(../img/circle-images/medrano.png);
+  top: 59%;
+  left: 39%; }
+
+#jn-traditions {
+  background-image: url(../img/circle-images/huichol.png);
+  top: 56%;
+  left: 33.5%; }
+
+#linares {
+  background-image: url(../img/circle-images/linares.png);
+  top: 71%;
+  left: 43%; }
+
+#mexico-traditions {
+  background-image: url(../img/circle-images/tree-death.png);
+  top: 66%;
+  left: 38.5%; }
+
+#guerrero-traditions {
+  background-image: url(../img/circle-images/gourd.png);
+  top: 74.5%;
+  left: 34%; }
+
+.image-holder {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  display: block; }
+
+.image-holder ul {
+  width: 100%;
+  text-align: center;
+  padding: 0;
+  margin: 0; }
+
+.image-holder li {
+  text-align: center;
+  padding: 0px;
+  margin: 0px 2px;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  background-size: 100%; }
+
+#dona {
+  background: url(../img/bw-people/rosa_2.jpg); }
+
+/*//////////////////////////////////////////////////
+//////////////////////////////////////////////////
+//////////////////////////////////////////////////*/
+/*cities and stars*/
+.circle-cities:hover {
+  opacity: 1; }
+
+#tonala {
+  left: 53%;
+  top: 67%; }
+
+#atzompa {
+  left: 72%;
+  top: 81%; }
+
+/*from hover.css*/
+.button {
+  /*margin: .4em;*/
+  cursor: pointer;
+  text-decoration: none;
+  color: #0db47b;
+  z-index: 200; }
+
+/* ring for picture circles */
+.outline-outward {
+  display: inline-block;
+  position: relative;
+  /*removing this snippet will change all POSTIONS!!*/
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0); }
+
+/* ring for city circles */
+.outline-outward-cities {
+  display: inline-block;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0); }
+
+/*these rules are for chaning the colors of the hover 'ring'*/
+.outline-outward-cities:before {
+  border: #34495e solid 2px; }
+
+.people-type.outline-outward:before {
+  border: #b85034 solid 2px; }
+
+.traditions-type.outline-outward:before {
+  border: #0db47b solid 2px; }
+
+.outline-outward:before {
+  content: '';
+  position: absolute;
+  border-radius: 40px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  /*-webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: top, right, bottom, left;
+  transition-property: top, right, bottom, left;*/
+  transition: all 0.3s; }
+
+.outline-outward-cities:before {
+  content: '';
+  position: absolute;
+  border-radius: 40px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  /*-webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: top, right, bottom, left;
+  transition-property: top, right, bottom, left;*/
+  transition: all 0.3s; }
+
+.outline-outward:hover:before, .outline-outward:focus:before, .outline-outward:active:before {
+  top: -3px;
+  right: -3px;
+  bottom: -3px;
+  left: -3px;
+  opacity: 1; }
+
+.outline-outward-cities:hover:before, .outline-outward-cities:focus:before, .outline-outward-cities:active:before {
+  top: -3px;
+  right: -3px;
+  bottom: -3px;
+  left: -3px;
+  opacity: 1; }
+
+.active-circle-map {
+  border: 2px solid red; }
+
+/*STAR SHAPE*/
+#star {
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  fill: darkseagreen;
+  transition: 0.6s all; }
+
+#star:hover {
+  fill: white;
+  transform: scale(1.5); }
+
+img {
+  margin: 30px auto;
+  display: block; }
+
+#oaxaca-wrap {
+  background: #fff;
+  transition: 0.3s all;
+  display: block;
+  margin-top: -5px !important;
+  padding-top: 10px !important; }
+
+.oaxaca-active {
+  background: #f9d498 !important; }
+
+#oaxaca-tip {
+  position: absolute;
+  top: 295px;
+  right: 0px;
+  padding: 0px 10px;
+  background: none repeat scroll 0% 0% #fff;
+  transition: all 0.3s ease 0s;
+  margin: 0px;
+  font-family: "lato";
+  font-size: 14px;
+  border-radius: 5px;
+  font-weight: 100;
+  border: 1px #333 solid;
+  height: 30px;
+  line-height: 2px; }
+
+.oaxaca-slide {
+  right: -225px !important; }
+
+#reference-menu {
+  position: absolute;
+  font-size: 14px;
+  font-family: 'Lato',sans-serif;
+  font-weight: 300;
+  opacity: 1;
+  width: 116px;
+  padding: 1px;
+  background: white;
+  top: 241px;
+  right: 0px;
+  transition: 0.3s all;
+  z-index: 900;
+  margin: 0;
+  padding-left: 5px;
+  z-index: 99 !important;
+  border-radius: 5px; }
+
+#reference-menu p, #reference-menu h2 {
+  margin: 0;
+  padding-left: 5px;
+  font-size: 14px; }
+#reference-menu p {
+  padding-bottom: 5px;
+  font-weight: 300;
+  text-transform: capitalize; }
+#reference-menu h2 {
+  padding-top: 5px;
+  font-weight: 900; }
+
+.activeReference {
+  /*right: -116px;*/
+  right: -136px !important; }
+
+.places-style {
+  border: 1px solid #34495e;
+  border-left: 5px solid #34495e;
+  color: #34495e !important; }
+
+.people-style {
+  border: 1px solid #b85034;
+  border-left: 5px solid #b85034;
+  color: #b85034 !important; }
+
+.traditions-style {
+  border: 1px solid #0db47b;
+  border-left: 5px solid #0db47b;
+  color: #0db47b !important; }
+
+#tools {
+  position: fixed;
+  font-size: 14px;
+  font-family: 'Lato',sans-serif;
+  font-weight: 300;
+  border-radius: 5px;
+  opacity: 0;
+  padding: 5px;
+  border-left: 0px solid #eee;
+  background: white;
+  top: 0;
+  left: 0;
+  transition: 0.3s all;
+  z-index: 1; }
+
+#tools h1, #tools h2 {
+  font-family: 'Lato',sans-serif !important;
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+  font-weight: 900; }
+
+#tools h2 {
+  font-weight: 100; }
+
+.people-tooltip {
+  border: 1px solid #b85034;
+  border-left: 5px solid #b85034 !important; }
+
+.traditions-tooltip {
+  border: 1px solid #0db47b;
+  border-left: 5px solid #0db47b !important; }
+
+.misc-tooltip {
+  border: 1px solid #34495e;
+  border-left: 5px solid #34495e !important; }
+
+.show {
+  z-index: 200 !important;
+  opacity: 1 !important; }
+
+/* MENU */
+header {
+  color: white;
+  z-index: 100;
+  height: 240px;
+  display: block;
+  background: url(../img/logo.png);
+  background-color: #7b5165;
+  z-index: 500;
+  width: 100%;
+  background-position: 0% 50%;
+  background-repeat: no-repeat;
+  text-align: center;
+  background-position: 50%;
+  position: absolute; }
+
+/* Code for Accordion */
+.accordion {
+  position: absolute;
+  top: 240px;
+  left: 0;
+  width: 100%;
+  height: 66%;
+  overflow: scroll;
+  overflow-x: hidden;
+  background: rgba(255, 255, 255, 0.8);
+  z-index: 100; }
+
+.accordion h3 {
+  color: #563546;
+  cursor: pointer;
+  margin: 0px;
+  height: 70px;
+  line-height: 70px;
+  padding-left: 15px;
+  border-bottom: 1px solid #AAA;
+  background: none repeat scroll 0% 0% #FFF;
+  font-weight: 100;
+  transition: all 0.3s ease 0s;
+  border-left: 0px solid #0DB47B;
+  font-family: "garamond-premier-pro-caption";
+  font-size: 26px;
+  font-weight: 100;
+  text-transform: uppercase;
+  letter-spacing: 1px; }
+
+#places:hover {
+  background: #34495e;
+  color: #ecf0f1; }
+
+#people:hover {
+  background: #b85034;
+  color: white; }
+
+#traditions:hover {
+  background: #0db47b;
+  color: white; }
+
+#links-list {
+  position: fixed;
+  top: 0;
+  left: 450px;
+  width: 150px;
+  background: white;
+  list-style: none;
+  text-align: center;
+  padding: 0;
+  margin: 10px 0;
+  text-align: 0; }
+
+#links-list li {
+  padding: 0;
+  margin: 10px 0;
+  text-align: 0; }
+
+.accordion p {
+  font-family: "ff-tisa-web-pro"; }
+
+.accordion h3.current {
+  cursor: default; }
+
+h1 {
+  padding-left: 0px;
+  transition: 0.3s all; }
+
+/*Different colors for different sections!!*/
+.activeItem {
+  transition: 0.3s all; }
+
+.people-pane .activeItem {
+  background: #b85034;
+  color: white; }
+
+.traditions-pane .activeItem {
+  background: #0db47b; }
+
+.places-pane .activeItem {
+  background: #34495e;
+  color: #ecf0f1; }
+
+.pane h1 {
+  margin-top: 10px;
+  margin-bottom: 10px; }
+
+h2.activeItem {
+  margin-top: -25px !important; }
+
+.activeItem {
+  padding: 10px 0px !important; }
+
+#resized {
+  border: 1px solid #333;
+  padding: 10px;
+  position: fixed;
+  z-index: 500;
+  background: red; }
+
+#resize-container {
+  position: relative;
+  margin: 0;
+  top: -44px;
+  left: -8px;
+  width: 450px;
+  min-width: 300px;
+  max-width: 650px;
+  height: 100%;
+  z-index: 100; }
+
+.state-path {
+  transition: 0.3s all; }
+
+.state-path:hover {
+  fill: #8D5758; }
+
+/*.current {
+  background:#555;
+  color:#fff;
+  border-left: $dark-color 10px solid;
+}
+*/
+.currentz#people {
+  background: #2c3e50 !important;
+  color: #fff !important;
+  border-bottom: #b85034 10px solid !important; }
+
+#places.currentz {
+  background: #34495e !important;
+  color: #fff !important;
+  border-bottom: #2c3e50 10px solid !important; }
+
+#traditions.currentz {
+  background: #2c3e50 !important;
+  color: #fff !important;
+  border-bottom: #0db47b 10px solid !important; }
+
+.accordion div.pane {
+  padding: 5px 0px; }
+
+.accordion div.pane p {
+  padding: 5px 10px; }
+
+.pane h1, .pane h2 {
+  text-align: center; }
+
+.pane h1 {
+  padding: 0px 0px; }
+
+/*Content Pane!*/
+.pane {
+  transition: background 0.5s;
+  background: #eee; }
+
+.a {
+  background: red; }
+
+body {
+  position: fixed;
+  overflow-y: scroll;
+  width: 100%; }
+
+svg {
+  position: fixed;
+  right: 0;
+  top: 0;
+  height: 100%; }
+
+header, h1 {
+  font-family: "garamond-premier-pro-caption" !important; }
+
+header h1 {
+  letter-spacing: 1px;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 40px; }
+
+.pane h1 {
+  margin-bottom: -15px !important;
+  font-size: 24px;
+  font-family: "garamond-premier-pro-caption",serif !important; }
+
+.pane h2 {
+  font-size: 18px;
+  font-weight: 100;
+  font-family: "garamond-premier-pro-caption",serif !important; }
+
+.accordion h3 {
+  font-family: "garamond-premier-pro-caption",serif !important;
+  text-align: center; }
