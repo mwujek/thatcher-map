@@ -5,18 +5,18 @@ var slideSpeed = 1000;
 //var scrollTo2 = "#scrollTo2";
 //click to add SVG File
 
-   $(document).ready(function() {
-   $( "#resize-container" ).resizable();
+$(document).ready(function() {
+ $( "#resize-container" ).resizable();
 });
 
 
 //wrap tinting div around image circle
 
-    $(function() {  
-        $('.circle-map, .circle-cities ').each(function() {  
-            $(this).prepend('<span class="tint"></span>');  
-        });  
-    }); 
+$(function() {  
+  $('.circle-map, .circle-cities ').each(function() {  
+    $(this).prepend('<span class="tint"></span>');  
+  });  
+}); 
 
 
 //What happens when hovering over button
@@ -83,22 +83,17 @@ function openTab2(p){
 
 
   if(sel==='#people-scroll-3'){
-      
-  setTimeout(function(){
-    $('#oaxaca-wrap').addClass('oaxaca-active');
-    $('#oaxaca-tip').addClass('oaxaca-slide');
-  },3000);
-
-
-
-}
-
-
+    
+    setTimeout(function(){
+      $('#oaxaca-wrap').addClass('oaxaca-active');
+      $('#oaxaca-tip').addClass('oaxaca-slide');
+    },3000);
+  }
 }
 
 
 //Adds class when hovering over states & cities
-$( ".button, .circle-cities" ).hover(
+$( ".button, .circle-cities, #star" ).hover(
   function() {
     $(tooltip).addClass('show');
   }, function() {
@@ -106,7 +101,7 @@ $( ".button, .circle-cities" ).hover(
   });
 
 //Updates location of Hovering Description
-$( ".button, .circle-cities" ).mousemove(function(event) {
+$( ".button, .circle-cities, #star" ).mousemove(function(event) {
   var currentMousePos = { x: -1, y: -1 };
   currentMousePos.x = event.pageX;
   currentMousePos.y = event.pageY;
@@ -120,12 +115,12 @@ $( ".button, .circle-cities" ).mousemove(function(event) {
 //Simple Hover effect.
 //Uses function to change color and HTML text. 
 //See functions above
-$( ".button, .circle-cities" ).hover(function() {
-    var menuAttr = $(this).data('element');
-    var info = $(this).data('info');
-    var category = $(this).data('category');
-    mouseOnButton(menuAttr, info, category);
-  }, function() {mouseOnButton(); } );
+$( ".button, .circle-cities, #star" ).hover(function() {
+  var menuAttr = $(this).data('element');
+  var info = $(this).data('info');
+  var category = $(this).data('category');
+  mouseOnButton(menuAttr, info, category);
+}, function() {mouseOnButton(); } );
 
 
 
@@ -151,25 +146,25 @@ function openTab3(scrollHere, category){
       $('#reference-menu').removeClass('activeReference');
       $(category).next(".pane").siblings(".pane:visible").slideUp(slideSpeed); // collapse all other tabls
       setTimeout(function(){
-      $(category).next(".pane").slideToggle(slideSpeed);
+        $(category).next(".pane").slideToggle(slideSpeed);
         setTimeout(function(){
           $(category).toggleClass("currentz");
-          },100);
+        },100);
       },1000); // open current slide
       
       $(category).siblings("h3").removeClass("currentz"); //remove any effects before the scrolling takes place
       $(category).children("h1,h2").removeClass('activeItem');
       moveToTop();
-     
+      
       setTimeout(function(){openTab2(scrollHere);},1500);
-      }
+    }
+
+    
+  }
+
+
 
   
-}
-
-
-
-   
 
 
   //$('.circle-map').html('c!!!!');
