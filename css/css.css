@@ -340,6 +340,7 @@ people and traditions*/
   width: 30px;
   height: 30px;
   position: fixed;
+  stroke: #fff;
   fill: #34495e;
   transition: 0.2s all;
   background: none !important;
@@ -599,7 +600,7 @@ h2.activeItem {
   top: -44px;
   left: -8px;
   width: 450px;
-  min-width: 300px;
+  min-width: 450px;
   max-width: 650px;
   height: 100%;
   z-index: 100; }
