@@ -1,11 +1,19 @@
 $tradition-color: #0DB47B; //teal green
-$people-color: #B85034; //orange
+$traditions-darker-text-activeItem:#143429; //darkergreen
+// $people-color: #B85034; //orange
+$people-color: #926D5A;; //same beige as unselected states
 $people-light-color:#f39c12;
-$places-color: #34495e; //dark gret
+// $places-color: #34495e; //dark gray
+// $places-color: #926D5A;
+$places-color: #7B5165;
 $places-lighter-color: #ecf0f1;
 $dark-color: #2c3e50;
+$dark-brown: #926D5A;
+$light-brown: #CF9E76;
+$darker-brown: #452F24;
 
 $maroon: #7B5165;
+$maroon-darker: #482F3B;
 $inverse-text:#fff;
 $oaxaca-color:#f9d498;
 
@@ -17,6 +25,8 @@ $line-break-length: 40%;
 $line-break-margin: 25px;
 $line-break-color: #aaa;
 
+$places-color-activePane: #482F3B;
+
 @import url(http://fonts.googleapis.com/css?family=Lato:400,300,700);
 
 body, html{
@@ -24,7 +34,15 @@ body, html{
   background:#aaa;
 }
 
+// typography
 
+.dv{
+  font-weight: 900;
+}
+
+.italic{
+  font-style: italic;
+}
 
 /*CIRLCE ICONS*/
 
@@ -36,6 +54,18 @@ body, html{
   border-radius: $cities-diameter/2;
   opacity: 0.7;
   transition:0.3s;
+}
+
+.places-menu-item {
+    margin-top: 30px !important;
+    margin-bottom: -10px !important;
+}
+.svg-circles{
+  fill: $darker-brown;
+}
+
+.svg-circles:hover{
+    cursor: pointer;
 }
 
 .circle-map{
@@ -195,6 +225,13 @@ left: 34%;
     height: $menu-image-diameter;
     border-radius: $menu-image-diameter/2;
   }
+
+  #oaxaca-smaller li{
+    width: $menu-image-diameter - 15;
+    height: $menu-image-diameter - 15;
+    border-radius: $menu-image-diameter - 15 /2;
+  }
+
 .holder-traditions{
   margin-top: 30px;
   margin-bottom: -10px;
@@ -211,12 +248,14 @@ left: 34%;
 #aguilar-menu{background: url(../img/export-300/aguilar.jpg);}
 #aguilar-menu-2{background: url(../img/export-300/frida.jpg);}
 #linares-menu{background: url(../img/export-300/linares.jpg);}
+#linares-menu-2{background: url(../img/export-300/alebrije.jpg);}
 #medrano-menu{background: url(../img/export-300/medrano.jpg);}
+#medrano-menu-2{background: url(../img/export-300/spaceship.jpg); background-position: 100% 57%;}
 
 /* traditions */
 
 #barro-negro-menu{background: url(../img/export-300/piggy_bank.jpg);}
-#barro-negro-menu-2{background: url(../img/export-300/bird.jpg);}
+#barro-negro-menu-2{background: url(../img/export-300/doubleheadedbirdvessel.jpg);}
 #wood-carving-menu{background: url(../img/export-300/rabbit.jpg);}
 #munecas-menu{background: url(../img/export-300/frida.jpg);}
 #munecas-menu-2{background: url(../img/export-300/woman_w_animals.jpg);}
@@ -231,6 +270,28 @@ left: 34%;
 #alebrije-menu{background: url(../img/export-300/alebrije.jpg);}
 #lacquerware-menu{background: url(../img/export-300/gourd.jpg);}
 #ceramic-finishes-menu{background: url(../img/export-300/pineapple.jpg);}
+
+// places
+
+#oaxaca-menu{background: url(../img/export-300/rabbit.jpg);}
+#oaxaca-menu-2{background: url(../img/export-300/piggy_bank.jpg);}
+#oaxaca-menu-3{background: url(../img/export-300/frida.jpg);}
+#oaxaca-menu-4{background: url(../img/export-300/woman_w_animals.jpg);}
+#oaxaca-menu-5{background: url(../img/export-300/huipil.jpg);background-position: 51% 100%;}
+
+#atzompa-menu{background: url(../img/export-300/doubleheadedbirdvessel.jpg);}
+#guanajuato-menu{background: url(../img/export-300/monkey_mask.jpg); background-position: 100% 70%;}
+#micho-menu{background: url(../img/export-300/pineapple.jpg);}
+#puebla-menu{background: url(../img/export-300/tree_of_life.jpg); background-position: 46% 100%;}
+#puebla-menu-2{background: url(../img/export-300/bird.jpg); background-position: 46% 100%;}
+#chiapas-menu{background: url(../img/export-300/hat.jpg);}
+#jn-menu{background: url(../img/export-300/huichol.jpg);}
+#jn-menu-2{background: url(../img/export-300/spaceship.jpg); background-position: 100% 57%;}
+#tonala-menu{background: url(../img/export-300/tonala_pitcher.jpg); background-position: 100% 83%;}
+#metepec-menu{background: url(../img/export-300/tree_of_death.jpg);}
+#metepec-menu-2{background: url(../img/export-300/alebrije.jpg);}
+#guerrero-menu{background: url(../img/export-300/gourd.jpg);}
+
 
 /*//////////////////////////////////////////////////
 //////////////////////////////////////////////////
@@ -399,7 +460,7 @@ img{
 }
 
 .oaxaca-slide{
-  right:-225px !important;
+  right:-325px !important;
 }
 
 #reference-menu{
@@ -560,7 +621,7 @@ header{
 }
 
 #places:hover{
-  background:$places-color;
+  background:$maroon;
   color:$places-lighter-color;
 }
 
@@ -616,10 +677,11 @@ h1{
 
 .traditions-pane .activeItem{
   background: $tradition-color;
+  color:$traditions-darker-text-activeItem;
 }
 
 .places-pane .activeItem{
-  background: $places-color;
+  background: $places-color-activePane;
   color:$places-lighter-color;
 }
 
@@ -665,6 +727,7 @@ h2.activeItem{
 }
 .state-path:hover{
   fill:#8D5758;
+  cursor: pointer;
 }
 
 .fill-in-state{
@@ -680,19 +743,19 @@ h2.activeItem{
 
 
 .currentz#people{
-  background:$dark-color !important;
+  background:$darker-brown !important;
   color:#fff !important;
   border-bottom: $people-color 10px solid !important;
 }
 
 #places.currentz{
-  background: $places-color !important;
+  background: $darker-brown !important;
   color:#fff !important;
-  border-bottom: $dark-color 10px solid !important;
+  border-bottom: $maroon 10px solid !important;
 }
 
 #traditions.currentz{
-  background:$dark-color !important;
+  background:$darker-brown !important;
   color:#fff !important;
   border-bottom: $tradition-color 10px solid !important;
 }
@@ -767,6 +830,7 @@ header h1{
 .pane h1{
   margin-bottom: -15px !important;
   font-size: 24px;
+  letter-spacing: 1px;
   font-family: "garamond-premier-pro-caption",serif !important;
 }
 .pane h2{

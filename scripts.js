@@ -82,7 +82,7 @@ function openTab2(p){
   },800);
 
 
-  if(sel==='#people-scroll-3'){
+  if(sel==='#people-scroll-1'){
     
     setTimeout(function(){
       $('#oaxaca-wrap').addClass('oaxaca-active');

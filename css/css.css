@@ -3,6 +3,12 @@ body, html {
   height: 100%;
   background: #aaa; }
 
+.dv {
+  font-weight: 900; }
+
+.italic {
+  font-style: italic; }
+
 /*CIRLCE ICONS*/
 .circle-cities {
   position: absolute;
@@ -12,6 +18,16 @@ body, html {
   border-radius: 6px;
   opacity: 0.7;
   transition: 0.3s; }
+
+.places-menu-item {
+  margin-top: 30px !important;
+  margin-bottom: -10px !important; }
+
+.svg-circles {
+  fill: #452f24; }
+
+.svg-circles:hover {
+  cursor: pointer; }
 
 .circle-map {
   position: absolute;
@@ -60,7 +76,7 @@ body, html {
   opacity: 0.3; }
 
 .circle-cities .tint:hover:before {
-  background: #34495e;
+  background: #7b5165;
   opacity: 0.3; }
 
 .traditions-type .tint:hover:before {
@@ -148,6 +164,11 @@ people and traditions*/
   height: 90px;
   border-radius: 45px; }
 
+#oaxaca-smaller li {
+  width: 75px;
+  height: 75px;
+  border-radius: 82.5px; }
+
 .holder-traditions {
   margin-top: 30px;
   margin-bottom: -10px; }
@@ -184,15 +205,22 @@ people and traditions*/
 #linares-menu {
   background: url(../img/export-300/linares.jpg); }
 
+#linares-menu-2 {
+  background: url(../img/export-300/alebrije.jpg); }
+
 #medrano-menu {
   background: url(../img/export-300/medrano.jpg); }
+
+#medrano-menu-2 {
+  background: url(../img/export-300/spaceship.jpg);
+  background-position: 100% 57%; }
 
 /* traditions */
 #barro-negro-menu {
   background: url(../img/export-300/piggy_bank.jpg); }
 
 #barro-negro-menu-2 {
-  background: url(../img/export-300/bird.jpg); }
+  background: url(../img/export-300/doubleheadedbirdvessel.jpg); }
 
 #wood-carving-menu {
   background: url(../img/export-300/rabbit.jpg); }
@@ -241,6 +269,63 @@ people and traditions*/
 #ceramic-finishes-menu {
   background: url(../img/export-300/pineapple.jpg); }
 
+#oaxaca-menu {
+  background: url(../img/export-300/rabbit.jpg); }
+
+#oaxaca-menu-2 {
+  background: url(../img/export-300/piggy_bank.jpg); }
+
+#oaxaca-menu-3 {
+  background: url(../img/export-300/frida.jpg); }
+
+#oaxaca-menu-4 {
+  background: url(../img/export-300/woman_w_animals.jpg); }
+
+#oaxaca-menu-5 {
+  background: url(../img/export-300/huipil.jpg);
+  background-position: 51% 100%; }
+
+#atzompa-menu {
+  background: url(../img/export-300/doubleheadedbirdvessel.jpg); }
+
+#guanajuato-menu {
+  background: url(../img/export-300/monkey_mask.jpg);
+  background-position: 100% 70%; }
+
+#micho-menu {
+  background: url(../img/export-300/pineapple.jpg); }
+
+#puebla-menu {
+  background: url(../img/export-300/tree_of_life.jpg);
+  background-position: 46% 100%; }
+
+#puebla-menu-2 {
+  background: url(../img/export-300/bird.jpg);
+  background-position: 46% 100%; }
+
+#chiapas-menu {
+  background: url(../img/export-300/hat.jpg); }
+
+#jn-menu {
+  background: url(../img/export-300/huichol.jpg); }
+
+#jn-menu-2 {
+  background: url(../img/export-300/spaceship.jpg);
+  background-position: 100% 57%; }
+
+#tonala-menu {
+  background: url(../img/export-300/tonala_pitcher.jpg);
+  background-position: 100% 83%; }
+
+#metepec-menu {
+  background: url(../img/export-300/tree_of_death.jpg); }
+
+#metepec-menu-2 {
+  background: url(../img/export-300/alebrije.jpg); }
+
+#guerrero-menu {
+  background: url(../img/export-300/gourd.jpg); }
+
 /*//////////////////////////////////////////////////
 //////////////////////////////////////////////////
 //////////////////////////////////////////////////*/
@@ -280,10 +365,10 @@ people and traditions*/
 
 /*these rules are for chaning the colors of the hover 'ring'*/
 .outline-outward-cities:before {
-  border: #34495e solid 2px; }
+  border: #7b5165 solid 2px; }
 
 .people-type.outline-outward:before {
-  border: #b85034 solid 2px; }
+  border: #926d5a solid 2px; }
 
 .traditions-type.outline-outward:before {
   border: #0db47b solid 2px; }
@@ -341,7 +426,7 @@ people and traditions*/
   height: 30px;
   position: fixed;
   stroke: #fff;
-  fill: #34495e;
+  fill: #7b5165;
   transition: 0.2s all;
   background: none !important;
   left: 64.2%;
@@ -385,7 +470,7 @@ img {
   line-height: 2px; }
 
 .oaxaca-slide {
-  right: -225px !important; }
+  right: -325px !important; }
 
 #reference-menu {
   position: absolute;
@@ -422,14 +507,14 @@ img {
   right: -136px !important; }
 
 .places-style {
-  border: 1px solid #34495e;
-  border-left: 5px solid #34495e;
-  color: #34495e !important; }
+  border: 1px solid #7b5165;
+  border-left: 5px solid #7b5165;
+  color: #7b5165 !important; }
 
 .people-style {
-  border: 1px solid #b85034;
-  border-left: 5px solid #b85034;
-  color: #b85034 !important; }
+  border: 1px solid #926d5a;
+  border-left: 5px solid #926d5a;
+  color: #926d5a !important; }
 
 .traditions-style {
   border: 1px solid #0db47b;
@@ -462,16 +547,16 @@ img {
   font-weight: 100; }
 
 .people-tooltip {
-  border: 1px solid #b85034;
-  border-left: 5px solid #b85034 !important; }
+  border: 1px solid #926d5a;
+  border-left: 5px solid #926d5a !important; }
 
 .traditions-tooltip {
   border: 1px solid #0db47b;
   border-left: 5px solid #0db47b !important; }
 
 .misc-tooltip {
-  border: 1px solid #34495e;
-  border-left: 5px solid #34495e !important; }
+  border: 1px solid #7b5165;
+  border-left: 5px solid #7b5165 !important; }
 
 .show {
   z-index: 200 !important;
@@ -524,11 +609,11 @@ header {
   letter-spacing: 1px; }
 
 #places:hover {
-  background: #34495e;
+  background: #7b5165;
   color: #ecf0f1; }
 
 #people:hover {
-  background: #b85034;
+  background: #926d5a;
   color: white; }
 
 #traditions:hover {
@@ -567,14 +652,15 @@ h1 {
   transition: 0.3s all; }
 
 .people-pane .activeItem {
-  background: #b85034;
+  background: #926d5a;
   color: white; }
 
 .traditions-pane .activeItem {
-  background: #0db47b; }
+  background: #0db47b;
+  color: #143429; }
 
 .places-pane .activeItem {
-  background: #34495e;
+  background: #482f3b;
   color: #ecf0f1; }
 
 .pane h1 {
@@ -609,7 +695,8 @@ h2.activeItem {
   transition: 0.3s all; }
 
 .state-path:hover {
-  fill: #8D5758; }
+  fill: #8D5758;
+  cursor: pointer; }
 
 .fill-in-state {
   fill: #7b5165; }
@@ -621,17 +708,17 @@ h2.activeItem {
 }
 */
 .currentz#people {
-  background: #2c3e50 !important;
+  background: #452f24 !important;
   color: #fff !important;
-  border-bottom: #b85034 10px solid !important; }
+  border-bottom: #926d5a 10px solid !important; }
 
 #places.currentz {
-  background: #34495e !important;
+  background: #452f24 !important;
   color: #fff !important;
-  border-bottom: #2c3e50 10px solid !important; }
+  border-bottom: #7b5165 10px solid !important; }
 
 #traditions.currentz {
-  background: #2c3e50 !important;
+  background: #452f24 !important;
   color: #fff !important;
   border-bottom: #0db47b 10px solid !important; }
 
@@ -687,6 +774,7 @@ header h1 {
 .pane h1 {
   margin-bottom: -15px !important;
   font-size: 24px;
+  letter-spacing: 1px;
   font-family: "garamond-premier-pro-caption",serif !important; }
 
 .pane h2 {
