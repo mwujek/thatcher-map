@@ -34,6 +34,13 @@ body, html{
   background:#aaa;
 }
 
+
+
+// testing SVG clipping
+
+
+
+
 // typography
 
 .dv{
@@ -62,6 +69,20 @@ body, html{
 }
 .svg-circles{
   fill: $darker-brown;
+  stroke: #918078;
+  stroke-width:0.5;
+}
+
+.svg-circles-people{
+  fill: $people-color !important;
+  stroke: #DD7749;
+  stroke-width:0.5;
+}
+
+.svg-circles-traditions{
+  fill: $tradition-color !important;
+  stroke: #59F0BC;
+  stroke-width:0.5;
 }
 
 .svg-circles:hover{
@@ -459,8 +480,36 @@ img{
   line-height: 2px;
 }
 
+#reset{
+  position: absolute;
+  top: 202px;
+  right: 0px;
+  padding: 0px 10px;
+  background: none repeat scroll 0% 0% #fff;
+  transition: all 0.3s ease 0s;
+  margin: 0px;
+  font-family: "lato";
+  font-size: 14px;
+  border-radius: 5px;
+  font-weight: 100;
+  border: 1px #333 solid;
+  height: 30px;
+  line-height: 2px;
+}
+
+#reset:hover{
+  background:$tradition-color;
+  color:white;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 .oaxaca-slide{
   right:-325px !important;
+}
+
+.resetSlideOut{
+  right:-103px !important;
 }
 
 #reference-menu{
@@ -578,7 +627,7 @@ header{
   background: url(../img/logo.png);
   background-color:#7b5165;
   z-index: 500;
-  width:100%;
+  width:450px;
   background-position: 0% 50%;
   background-repeat: no-repeat;
   text-align:center;
@@ -591,14 +640,16 @@ header{
 
 .accordion {
   position: absolute;
-  top:240px;
-  left:0;
-  width:100%;
-  height:66%;
+  top:0px;
+  left:0px;
+  padding-top: 240px;
+  width:450px;
+  height:100%;
   overflow:scroll;
   overflow-x:hidden;
-  background:rgba(255,255,255,0.8);
+  background:#C7AEBA;
   z-index: 100;
+  box-sizing: border-box;
 }
 .accordion h3 {
   color: #563546;
@@ -617,6 +668,7 @@ header{
   font-weight: 100;
   text-transform: uppercase;
   letter-spacing: 1px;
+  box-sizing: border-box;
 
 }
 
@@ -711,15 +763,17 @@ h2.activeItem{
 }
 
 #resize-container{
-  position: relative;
+  position: fixed;
+  box-sizing: border-box;
   margin: 0;
-  top:-44px;
-  left:-8px;
+  top:0px;
+  left:0px;
   width: 450px;
   min-width: 450px;
   max-width: 650px;
   height: 100%;
   z-index: 100;
+  box-sizing: border-box;
   
 }
 .state-path{

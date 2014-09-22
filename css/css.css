@@ -24,7 +24,19 @@ body, html {
   margin-bottom: -10px !important; }
 
 .svg-circles {
-  fill: #452f24; }
+  fill: #452F24;
+  stroke: #918078;
+  stroke-width: 0.5; }
+
+.svg-circles-people {
+  fill: #926D5A !important;
+  stroke: #DD7749;
+  stroke-width: 0.5; }
+
+.svg-circles-traditions {
+  fill: #0DB47B !important;
+  stroke: #59F0BC;
+  stroke-width: 0.5; }
 
 .svg-circles:hover {
   cursor: pointer; }
@@ -76,11 +88,11 @@ body, html {
   opacity: 0.3; }
 
 .circle-cities .tint:hover:before {
-  background: #7b5165;
+  background: #7B5165;
   opacity: 0.3; }
 
 .traditions-type .tint:hover:before {
-  background: #0db47b;
+  background: #0DB47B;
   opacity: 0.3; }
 
 /*/////////////////////////
@@ -346,7 +358,7 @@ people and traditions*/
   /*margin: .4em;*/
   cursor: pointer;
   text-decoration: none;
-  color: #0db47b;
+  color: #0DB47B;
   z-index: 200; }
 
 /* ring for picture circles */
@@ -365,13 +377,13 @@ people and traditions*/
 
 /*these rules are for chaning the colors of the hover 'ring'*/
 .outline-outward-cities:before {
-  border: #7b5165 solid 2px; }
+  border: #7B5165 solid 2px; }
 
 .people-type.outline-outward:before {
-  border: #926d5a solid 2px; }
+  border: #926D5A solid 2px; }
 
 .traditions-type.outline-outward:before {
-  border: #0db47b solid 2px; }
+  border: #0DB47B solid 2px; }
 
 .outline-outward:before {
   content: '';
@@ -426,7 +438,7 @@ people and traditions*/
   height: 30px;
   position: fixed;
   stroke: #fff;
-  fill: #7b5165;
+  fill: #7B5165;
   transition: 0.2s all;
   background: none !important;
   left: 64.2%;
@@ -469,8 +481,33 @@ img {
   height: 30px;
   line-height: 2px; }
 
+#reset {
+  position: absolute;
+  top: 202px;
+  right: 0px;
+  padding: 0px 10px;
+  background: none repeat scroll 0% 0% #fff;
+  transition: all 0.3s ease 0s;
+  margin: 0px;
+  font-family: "lato";
+  font-size: 14px;
+  border-radius: 5px;
+  font-weight: 100;
+  border: 1px #333 solid;
+  height: 30px;
+  line-height: 2px; }
+
+#reset:hover {
+  background: #0DB47B;
+  color: white;
+  text-decoration: underline;
+  cursor: pointer; }
+
 .oaxaca-slide {
   right: -325px !important; }
+
+.resetSlideOut {
+  right: -103px !important; }
 
 #reference-menu {
   position: absolute;
@@ -507,19 +544,19 @@ img {
   right: -136px !important; }
 
 .places-style {
-  border: 1px solid #7b5165;
-  border-left: 5px solid #7b5165;
-  color: #7b5165 !important; }
+  border: 1px solid #7B5165;
+  border-left: 5px solid #7B5165;
+  color: #7B5165 !important; }
 
 .people-style {
-  border: 1px solid #926d5a;
-  border-left: 5px solid #926d5a;
-  color: #926d5a !important; }
+  border: 1px solid #926D5A;
+  border-left: 5px solid #926D5A;
+  color: #926D5A !important; }
 
 .traditions-style {
-  border: 1px solid #0db47b;
-  border-left: 5px solid #0db47b;
-  color: #0db47b !important; }
+  border: 1px solid #0DB47B;
+  border-left: 5px solid #0DB47B;
+  color: #0DB47B !important; }
 
 #tools {
   position: fixed;
@@ -547,16 +584,16 @@ img {
   font-weight: 100; }
 
 .people-tooltip {
-  border: 1px solid #926d5a;
-  border-left: 5px solid #926d5a !important; }
+  border: 1px solid #926D5A;
+  border-left: 5px solid #926D5A !important; }
 
 .traditions-tooltip {
-  border: 1px solid #0db47b;
-  border-left: 5px solid #0db47b !important; }
+  border: 1px solid #0DB47B;
+  border-left: 5px solid #0DB47B !important; }
 
 .misc-tooltip {
-  border: 1px solid #7b5165;
-  border-left: 5px solid #7b5165 !important; }
+  border: 1px solid #7B5165;
+  border-left: 5px solid #7B5165 !important; }
 
 .show {
   z-index: 200 !important;
@@ -571,7 +608,7 @@ header {
   background: url(../img/logo.png);
   background-color: #7b5165;
   z-index: 500;
-  width: 100%;
+  width: 450px;
   background-position: 0% 50%;
   background-repeat: no-repeat;
   text-align: center;
@@ -581,14 +618,16 @@ header {
 /* Code for Accordion */
 .accordion {
   position: absolute;
-  top: 240px;
-  left: 0;
-  width: 100%;
-  height: 66%;
+  top: 0px;
+  left: 0px;
+  padding-top: 240px;
+  width: 450px;
+  height: 100%;
   overflow: scroll;
   overflow-x: hidden;
-  background: rgba(255, 255, 255, 0.8);
-  z-index: 100; }
+  background: #C7AEBA;
+  z-index: 100;
+  box-sizing: border-box; }
 
 .accordion h3 {
   color: #563546;
@@ -606,19 +645,20 @@ header {
   font-size: 26px;
   font-weight: 100;
   text-transform: uppercase;
-  letter-spacing: 1px; }
+  letter-spacing: 1px;
+  box-sizing: border-box; }
 
 #places:hover {
-  background: #7b5165;
+  background: #7B5165;
   color: #ecf0f1; }
 
 #people:hover {
-  background: #926d5a;
-  color: white; }
+  background: #926D5A;
+  color: #fff; }
 
 #traditions:hover {
-  background: #0db47b;
-  color: white; }
+  background: #0DB47B;
+  color: #fff; }
 
 #links-list {
   position: fixed;
@@ -652,15 +692,15 @@ h1 {
   transition: 0.3s all; }
 
 .people-pane .activeItem {
-  background: #926d5a;
-  color: white; }
+  background: #926D5A;
+  color: #fff; }
 
 .traditions-pane .activeItem {
-  background: #0db47b;
+  background: #0DB47B;
   color: #143429; }
 
 .places-pane .activeItem {
-  background: #482f3b;
+  background: #482F3B;
   color: #ecf0f1; }
 
 .pane h1 {
@@ -681,15 +721,17 @@ h2.activeItem {
   background: red; }
 
 #resize-container {
-  position: relative;
+  position: fixed;
+  box-sizing: border-box;
   margin: 0;
-  top: -44px;
-  left: -8px;
+  top: 0px;
+  left: 0px;
   width: 450px;
   min-width: 450px;
   max-width: 650px;
   height: 100%;
-  z-index: 100; }
+  z-index: 100;
+  box-sizing: border-box; }
 
 .state-path {
   transition: 0.3s all; }
@@ -699,7 +741,7 @@ h2.activeItem {
   cursor: pointer; }
 
 .fill-in-state {
-  fill: #7b5165; }
+  fill: #7B5165; }
 
 /*.current {
   background:#555;
@@ -708,19 +750,19 @@ h2.activeItem {
 }
 */
 .currentz#people {
-  background: #452f24 !important;
+  background: #452F24 !important;
   color: #fff !important;
-  border-bottom: #926d5a 10px solid !important; }
+  border-bottom: #926D5A 10px solid !important; }
 
 #places.currentz {
-  background: #452f24 !important;
+  background: #452F24 !important;
   color: #fff !important;
-  border-bottom: #7b5165 10px solid !important; }
+  border-bottom: #7B5165 10px solid !important; }
 
 #traditions.currentz {
-  background: #452f24 !important;
+  background: #452F24 !important;
   color: #fff !important;
-  border-bottom: #0db47b 10px solid !important; }
+  border-bottom: #0DB47B 10px solid !important; }
 
 .accordion div.pane {
   padding: 5px 0px; }
@@ -769,7 +811,7 @@ header h1 {
   width: 40%;
   height: 1px;
   margin: 35px auto 25px auto;
-  background: #aaaaaa; }
+  background: #aaa; }
 
 .pane h1 {
   margin-bottom: -15px !important;
