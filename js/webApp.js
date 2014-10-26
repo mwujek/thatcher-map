@@ -5,9 +5,9 @@ var slideSpeed = 1000;
 //var scrollTo2 = "#scrollTo2";
 //click to add SVG File
 
-// $(document).ready(function() {
-//  $( "#resize-container" ).resizable();
-// });
+$(document).ready(function() {
+ $( "#resize-container" ).resizable();
+});
 
 
 //wrap tinting div around image circle
@@ -51,11 +51,7 @@ function mouseOnButton(itemLocalz, moreInfo, elementCategory){
 function moveToTop(){
   $('.accordion').animate({scrollTop: 0 }, 500);
 }
-function slideOutReset(){
-  var resetButton = $('#reset');
-  resetButton.addClass('resetSlideOut');
 
-}
 
 function slideOutReference(){
   //var stringCategory = '"'+info+'"';
@@ -79,7 +75,6 @@ function openTab2(p){
   setTimeout(function(){
     $(sel).addClass('activeItem');
     slideOutReference(); //slide out reference bar
-    slideOutReset();// slide out reset button
     if($(sel).next().hasClass('date')){
       var date = $(sel).next();
       $(date).addClass('activeItem');
@@ -143,15 +138,12 @@ function openTab3(scrollHere, category){
 
         $(category).next().children("h1,h2").removeClass('activeItem'); //remove active class from the entry
         $('#reference-menu').removeClass('activeReference');
-        $('#reset').removeClass();
         moveToTop();
         setTimeout(function(){openTab2(scrollHere);},1300);
       } else{
 
       $(category).next().children("h1,h2").removeClass('activeItem'); //remove active class from the entry
       $('#reference-menu').removeClass('activeReference');
-      $('#reset').removeClass();
-
       $(category).next(".pane").siblings(".pane:visible").slideUp(slideSpeed); // collapse all other tabls
       setTimeout(function(){
         $(category).next(".pane").slideToggle(slideSpeed);
@@ -173,11 +165,7 @@ function openTab3(scrollHere, category){
 
 
   
- $('#reset').on('click', function(){
-    $('.accordion div').slideUp(800);
-    $('#reset').removeClass();
-    $('.accordion h3').removeClass('currentz').hasClass('.currentz');
- });
+
 
   //$('.circle-map').html('c!!!!');
   
@@ -187,7 +175,6 @@ function openTab3(scrollHere, category){
 
     $('.activeItem').removeClass('activeItem');
     $('#reference-menu').removeClass();
-    $('#reset').removeClass();
     $('#oaxaca-wrap').removeClass('oaxaca-active');
     $('#oaxaca-tip').removeClass();
     openTab3(scrollHere, category);
@@ -208,10 +195,13 @@ $(function () {
       $(this).siblings("h3").removeClass("currentz");
       $(this).next().children("h1,h2").removeClass('activeItem'); //remove active class from the entry
       $('#reference-menu').removeClass();
-      $('#reset').removeClass();
       $('#oaxaca-wrap').removeClass('oaxaca-active');
       $('#oaxaca-tip').removeClass();
       //openTab();
     });
   });
+
+
+
+
 

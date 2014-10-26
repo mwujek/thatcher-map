@@ -1,0 +1,323 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:400,300,700);
+
+body, html{
+  height:100%;
+  background:#aaa
+}
+.states, .cities{
+  transition:0.5s all;
+}
+
+
+.states:hover{
+  fill:#0db47b !important;
+}
+
+.cities:hover{
+  fill:#7b5165 !important;
+}
+
+/*CIRLCE ICONS*/
+
+/*from hover.css*/
+.button {
+  /*margin: .4em;*/
+  cursor: pointer;
+  text-decoration: none;
+  color: #666666;
+}
+
+
+/* Outline Outward */
+.outline-outward {
+  display: inline-block;
+  position: relative;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  
+}
+.outline-outward:before {
+  content: '';
+  position: absolute;
+  border: #fff solid 3px;
+  border-radius: 40px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  /*-webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: top, right, bottom, left;
+  transition-property: top, right, bottom, left;*/
+  transition:all 0.3s;
+}
+.outline-outward:hover:before, .outline-outward:focus:before, .outline-outward:active:before {
+  top: -3px;
+  right: -3px;
+  bottom: -3px;
+  left: -3px;
+  opacity: 1;
+}
+
+.circle-map{
+  width:40px;
+  height:40px;
+  border-radius: 25px;
+  background:#666;
+  transition:0.3s all;
+  position: fixed;
+  border:0px solid red;
+}
+
+.active-circle-map{
+  border:2px solid red;
+}
+
+
+/*STAR SHAPE*/
+
+#star{
+  width:40px;
+  height:40px;
+  position:fixed;
+  top:50%;
+  left:50%;
+  fill:DarkSeaGreen ;
+  transition:0.6s all;
+}
+
+#star:hover{
+  fill:white;
+  transform: scale(1.5); 
+}
+
+
+#dona, #dona2, #dona3{
+  top:50%;
+  left:60%;
+  background-image: url(img/bw-people/teodora.jpg);
+  background-size: 100% 100%;
+}
+
+#dona2{
+  left:70%;
+}
+
+#dona3{
+  left: 80%;
+}
+
+img{
+  margin:30px auto;
+  display:block;
+}
+
+span{
+  z-index:100;
+  background:blue;
+  position:absolute;
+}
+
+#tools{
+  position:fixed;
+  font-size:14px;
+  font-family:'Lato',sans-serif;
+  font-weight:300;
+  opacity:0;
+  padding:5px;
+  border:1px solid #eee;
+  background:white;
+  top:0;
+  left:0;
+  transition:0.3s all;
+
+  
+}
+
+.show{
+  opacity:1 !important;
+}
+
+/* MENU */
+header{
+  color:white;
+  position:fixed;
+  top:0;
+  left:0;
+  z-index: 100;
+  height:240px;
+  background: url(img/logo.png);
+  background-color:#7b5165;
+  width:100%;
+  width:400px;
+  background-position: 0% 50%;
+  background-repeat: no-repeat;
+  text-align:center;
+  
+}
+/* Code for Accordion */
+
+.accordion {
+  position:fixed;
+  top:240px;
+  left:0;
+  width:400px;
+  height:100%;
+  overflow:scroll;
+  overflow-x:hidden;
+  background:rgba(255,255,255,0.8);
+  height:100%;
+  
+}
+.accordion h3 {
+  color: #563546;
+  cursor: pointer;
+  margin: 0px;
+  height: 70px;
+  line-height: 70px;
+  padding-left: 15px;
+  border-bottom: 1px solid #AAA;
+  background: none repeat scroll 0% 0% #FFF;
+  font-weight: 100;
+  transition: all 0.3s ease 0s;
+  border-left: 0px solid #0DB47B;
+  font-family: "garamond-premier-pro-caption";
+  font-size: 26px;
+  font-weight: 100;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+
+}
+.accordion h3:hover{
+  background:#aaa;
+  border-left: #0db47b 1px solid;
+  
+}
+
+#links-list{
+  position: fixed;
+  top: 0;
+  left: 450px;
+  width: 150px;
+  background: white;
+  list-style: none;
+  text-align: center;
+  padding: 0;
+  margin: 10px 0;
+  text-align: 0;
+}
+
+#links-list li{
+  padding: 0;
+  margin: 10px 0;
+  text-align: 0;
+}
+
+.accordion p{
+  font-family:"ff-tisa-web-pro";
+}
+.accordion h3.current {
+  cursor:default;
+  
+}
+h1{
+  padding-left: 0px;
+  transition:0.3s all;
+}
+
+.activeItem{
+  transition:0.3s all;
+  background: #333;
+  color:#fff;
+  padding: 20px 0px !important;
+}
+
+.pane h1{
+  
+  padding: 0;
+  margin: 0;
+}
+
+.current {
+  background:#555;
+  color:#fff;
+  border-left: #0db47b 10px solid;
+
+}
+
+.currentz {
+  background:#555 !important;
+  color:#fff !important;
+  border-left: #0db47b 10px solid !important;
+
+}
+.accordion div.pane {
+  padding:5px 0px;
+}
+
+.accordion div.pane p{
+  padding: 5px 10px;
+
+  }
+
+.pane h1, .pane h2{
+  text-align: center;
+}
+
+.pane h1{
+  padding: 0px 0px;
+}
+
+/*Content Pane!*/
+.pane{
+  transition:background 0.5s;
+  background:#eee;
+}
+.a{
+  background:red;
+}
+
+
+
+body
+{
+  position: fixed; 
+  overflow-y: scroll;
+  width: 100%;
+}
+
+svg{
+  position: fixed;
+  right:0;
+  top:0;
+  height: 100%;
+}
+
+header, h1{
+  font-family: "garamond-premier-pro-caption" !important;
+  
+}
+
+header h1{
+  letter-spacing: 1px;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 40px;
+}
+
+}
+.pane h1{
+  margin-bottom: -15px !important;
+  font-size: 24px;
+  font-family: "garamond-premier-pro-caption",serif !important;
+}
+.pane h2{
+  font-size: 18px;
+  font-weight: 100;
+  font-family: "garamond-premier-pro-caption",serif !important;
+}
+.accordion h3{
+  font-family: "garamond-premier-pro-caption",serif !important;
+}
+}
